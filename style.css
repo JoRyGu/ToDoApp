@@ -43,9 +43,32 @@ li {
     font-size: 14px;
     list-style: none;
     background-color: white;
-    width: 350%;
+    width: 260px;
     height: 30px;
     border-radius: 6px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
     margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input {
+    height: 75%;
+    width: 200px;
+}
+
+button {
+    width: 20px;
+    height: 20px
+}
+
+#start {
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
 }
