@@ -3,19 +3,21 @@ function createTaskElement() {
     li.setAttribute('class', 'task-box');
     let taskInput = document.createElement('input');
     taskInput.setAttribute('type', 'text');
-    taskInput.setAttribute('id', 'add-task');
+    taskInput.setAttribute('class', 'add-task');
     taskInput.setAttribute('placeholder', 'Add a task...');
     li.appendChild(taskInput);
     let editButton = document.createElement('button');
     editButton.innerText = 'I';
-    editButton.setAttribute('id', 'edit');
+    editButton.setAttribute('class', 'edit');
     li.appendChild(editButton);
     let deleteButton = document.createElement('button');
     deleteButton.innerText = 'X';
-    deleteButton.setAttribute('id', 'delete');
+    deleteButton.setAttribute('class', 'delete');
     li.appendChild(deleteButton);
     return li;
 }
+
+
 
 const addTaskButton = document.getElementById('start');
 const taskListContainer = document.getElementById('list');
@@ -42,4 +44,21 @@ list.addEventListener('keypress', e => {
         listElement.prepend(p);
     }
 })
+
+list.addEventListener('click', e => {
+    if (e.target.getAttribute('class') === 'edit') {
+        console.log('Edit Button Pressed')
+        if (e.target.parentNode.firstChild.getAttribute('class') === 'finished-task') {
+            let text = e.target.parentNode.firstChild.innerText;
+            e.target.parentNode.removeChild(e.target.parentNode.firstChild);
+            let taskInput = document.createElement('input');
+            taskInput.setAttribute('type', 'text');
+            taskInput.setAttribute('class', 'add-task');
+            taskInput.setAttribute('placeholder', text);
+            e.target.parentNode.prepend(taskInput);
+            e.target.parentNode.firstChild.focus();
+        }
+    }
+})
+
 
