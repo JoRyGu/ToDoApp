@@ -47,7 +47,6 @@ list.addEventListener('keypress', e => {
 
 list.addEventListener('click', e => {
     if (e.target.getAttribute('class') === 'edit') {
-        console.log('Edit Button Pressed')
         if (e.target.parentNode.firstChild.getAttribute('class') === 'finished-task') {
             let text = e.target.parentNode.firstChild.innerText;
             e.target.parentNode.removeChild(e.target.parentNode.firstChild);
@@ -58,6 +57,11 @@ list.addEventListener('click', e => {
             e.target.parentNode.prepend(taskInput);
             e.target.parentNode.firstChild.focus();
         }
+    }
+
+    if (e.target.getAttribute('class') === 'delete') {
+        console.log('Delete pressed');
+        list.removeChild(e.target.parentNode);
     }
 })
 
