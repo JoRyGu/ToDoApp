@@ -54,6 +54,11 @@ li {
     align-items: center;
 }
 
+.task-box:hover {
+    height: auto;
+    min-height: 30px;
+}
+
 input {
     height: 75%;
     width: 200px;
@@ -71,4 +76,17 @@ button {
     justify-content: center;
     flex-direction: row;
     text-align: center;
+}
+
+.finished-task {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.finished-task:hover {
+    overflow: unset;
+    white-space: normal;
+    height: auto;
 }
