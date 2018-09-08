@@ -20,7 +20,7 @@ body {
     text-shadow: 5px 5px 5px rgba(0,0,0,0.6);
     font-size: 18px;
     width: 100%;
-    margin: 15px 5px 30px 5px;
+    margin: 15px 5px 15px 5px;
 }
 
 ul {
@@ -72,11 +72,14 @@ button {
 #start {
     width: auto;
     min-width: 100px;
-    height: 20px;
+    height: auto;
     display: flex;
     justify-content: center;
     flex-direction: row;
     text-align: center;
+    padding: 3px;
+    border-radius: 8px;
+    margin: 15px 0px 15px 0px;
 }
 
 .finished-task {
@@ -90,4 +93,37 @@ button {
     overflow: unset;
     white-space: normal;
     height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .title {
+        font-size: 24px
+    }
+    #start {
+        font-size: 14px;
+        min-width: 150px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .title {font-size: 32px}
+    .task-box {
+        width: 400px;
+        margin: 8px 0px 8px 0px;
+    }
+    input {
+        width: 340px;
+    }
+    .finished-task {
+        width: 340px;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) {
+    .title {font-size: 40px}
+}
+
+@media only screen and (min-width: 1920px) {
+    .title {font-size: 48px} 
 }
