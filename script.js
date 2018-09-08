@@ -26,7 +26,6 @@ let taskBox = document.querySelectorAll('.task-box');
 addTaskButton.addEventListener('click', () => {
     let listElement = createTaskElement();
     taskListContainer.appendChild(listElement);
-    console.log(listElement.firstChild);
     listElement.firstChild.focus();
     addTaskButton.innerText = 'Add another task';
     taskBox = document.querySelectorAll('.task-box');
@@ -43,6 +42,7 @@ list.addEventListener('keypress', e => {
         p.setAttribute('class', 'finished-task');
         listElement.prepend(p);
     }
+    
 })
 
 list.addEventListener('click', e => {
@@ -62,6 +62,9 @@ list.addEventListener('click', e => {
     if (e.target.getAttribute('class') === 'delete') {
         console.log('Delete pressed');
         list.removeChild(e.target.parentNode);
+        if (list.children.length <= 1) {
+            addTaskButton.innerText = 'Add First Task';
+        }
     }
 })
 
